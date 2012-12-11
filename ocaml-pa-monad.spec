@@ -39,3 +39,10 @@ rm -rf %{buildroot}
 %doc COPYING README ChangeLog html-doc
 %{_libdir}/ocaml/monad
 
+
+
+%changelog
+* Sun Aug 09 2009 Florent Monnier <blue_prawn@mandriva.org> 6.0-1mdv2010.0
++ Revision: 412893
+- spec file made from the fedora's one
+
