@@ -1,19 +1,28 @@
-Name:           ocaml-pa-monad
-Version:        6.0
-Release:        %mkrel 1
-Summary:        OCaml syntax extension for monads
-Group:          Development/Other
-License:        LGPLv2+ with exceptions
-URL:            http://www.cas.mcmaster.ca/~carette/pa_monad/
-Source0:        http://www.cas.mcmaster.ca/~carette/pa_monad/pa_monad.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
-BuildRequires:  ocaml-findlib
-BuildRequires:  camlp4
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
+
+Summary:	OCaml syntax extension for monads
+Name:		ocaml-pa-monad
+Version:	6.0
+Release:	2
+Group:		Development/Other
+License:	LGPLv2+ with exceptions
+Url:		http://www.cas.mcmaster.ca/~carette/pa_monad/
+Source0:	http://www.cas.mcmaster.ca/~carette/pa_monad/pa_monad.tar.gz
+BuildRequires:	camlp4
+BuildRequires:	ocaml
+BuildRequires:	ocaml-findlib
 
 %description
 This Camlp4 parser adds some syntactic sugar to beautify monadic
-expressions.  The name of the syntax extension is a bit misleading as
+expressions. The name of the syntax extension is a bit misleading as
 it does not provide any monad nor monadic computation.
+
+%files
+%doc COPYING README ChangeLog html-doc
+%{_libdir}/ocaml/monad/
+
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q -c
@@ -21,28 +30,11 @@ it does not provide any monad nor monadic computation.
 %build
 make all doc
 
-%check
-make test
-
 %install
-rm -rf %{buildroot}
 export DESTDIR=%{buildroot}
 export OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocaml
 mkdir -p $OCAMLFIND_DESTDIR $OCAMLFIND_DESTDIR/stublibs
 make findlib-install
 
-%clean
-rm -rf %{buildroot}
-
-%files
-%defattr(-,root,root)
-%doc COPYING README ChangeLog html-doc
-%{_libdir}/ocaml/monad
-
-
-
-%changelog
-* Sun Aug 09 2009 Florent Monnier <blue_prawn@mandriva.org> 6.0-1mdv2010.0
-+ Revision: 412893
-- spec file made from the fedora's one
-
+%check
+make test
