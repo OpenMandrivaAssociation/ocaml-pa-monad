@@ -4,7 +4,7 @@
 Summary:	OCaml syntax extension for monads
 Name:		ocaml-pa-monad
 Version:	6.0
-Release:	2
+Release:	3
 Group:		Development/Other
 License:	LGPLv2+ with exceptions
 Url:		http://www.cas.mcmaster.ca/~carette/pa_monad/
