@@ -7,7 +7,7 @@ Version:	6.0
 Release:	3
 Group:		Development/Other
 License:	LGPLv2+ with exceptions
-Url:		http://www.cas.mcmaster.ca/~carette/pa_monad/
+Url:		https://www.cas.mcmaster.ca/~carette/pa_monad/
 Source0:	http://www.cas.mcmaster.ca/~carette/pa_monad/pa_monad.tar.gz
 BuildRequires:	camlp4
 BuildRequires:	ocaml
