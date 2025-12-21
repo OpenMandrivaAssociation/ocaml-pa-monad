@@ -9,6 +9,7 @@ Group:		Development/Other
 License:	LGPLv2+ with exceptions
 Url:		https://www.cas.mcmaster.ca/~carette/pa_monad/
 Source0:	http://www.cas.mcmaster.ca/~carette/pa_monad/pa_monad.tar.gz
+BuildRequires:	make
 BuildRequires:	camlp4
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
